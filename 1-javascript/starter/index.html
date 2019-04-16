@@ -16,7 +16,42 @@
     // Create a post object with an id and title that is frozen
     // Test whether you can reassign each of the variables
     // Log out each of the variables to the page
-
+      const username = "RJ";
+      
+      let loggedIn = "true";
+      
+      const post = {
+          id: 1,
+          title : "The title"
+      };
+      
+      
+      console.log("Username at the start: ", username);
+      
+      console.log("Logged in at the start: ", loggedIn);
+      
+//      let username = "Urge"; //Creates an error as expected
+      
+      console.log("Username later:", username); 
+      
+      loggedIn = "False"; //Should change the value
+      
+      console.log("Logged in later: ", loggedIn); //Is now false
+      
+      
+      console.log("Initial post id: ", post.id); //Should be 1
+      
+      post.id=5; //Reassigns
+      
+      console.log("New post id: ", post.id); //Works, now shows 5
+      
+      console.log("The initial title: ", post.title);
+      
+      post.title = "A better title";
+      
+      console.log("The new title: ", post.title);
+      
+      
 
 
     // Practice 2 - Template Literals
@@ -24,10 +59,11 @@
     // Create a variable called message that can be reassigned
     // Use a template literal to create message like "Hi firstName lastName!"
     // Log out the message to the console
-    const firstName = "";
-    const lastName = ""
+    const firstName = "RJ";
+    const lastName = "Mey";
+      
 
-    let message = ``;
+    let message = `Hi ${firstName} ${lastName}`;
 
     console.log(message);
 
@@ -42,8 +78,15 @@
         `<p>${name}<p>`
       )
     }
+      
+    const ArrowName = (name) => {
+        
+        return (
+            `<p> ${name} is awesome</p>`
+        )
+    }
 
-
+    console.log( ArrowName('RJ') );
 
     // Practice 4 - .filter() and .map()
     // Filter the array of posts into a filteredPost variable
@@ -64,7 +107,16 @@
         title: "Last one"
       }
     ];
+      
+      const filteredPost = posts.filter(
+          post => {
+                 return post.title.includes('post');
+          }
+      )
 
+     const filteredPostTitles = () =>(
+        filteredPost.map( post => post.title)
+     );
 
 
     // Practice 5 - DOM Creation
@@ -91,6 +143,12 @@
       }
     ];
 
+    const domCreator = () => (
+        postsArray.map(
+            
+        )
+    )
+      
 
   </script>
 </body>
